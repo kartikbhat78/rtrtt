@@ -45,12 +45,26 @@
         .btn:hover {
             background-color: #e74c3c; /* Bright red */
         }
+        .college-logo {
+            max-width: 250px; /* Adjust size as needed */
+            margin: 20px auto; /* Centering */
+            display: block; /* Centering image */
+        }
+        .college-title {
+            text-align: center; /* Center the title */
+            margin-top: 10px; /* Spacing from logo */
+            font-size: 2.5rem; /* Larger font size */
+            color: #e74c3c; /* Match Deadpool red */
+        }
     </style>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">kk College</a>
+    <div class="text-center w-100">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTTjpN0dYcuQrbVLVoFX_QCEjVE2LY5VhZbsLmFig_BFsfwFoxwYmvqlCmmgB9Gd4t_hg&usqp=CAU" alt="College Logo" class="college-logo">
+        <h1 class="college-title">kk College</h1>
+    </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -65,6 +79,15 @@
             <li class="nav-item">
                 <a class="nav-link" href="#testimonials">Testimonials</a>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#faq">FAQ</a>
+                    <a class="dropdown-item" href="#events">Events</a>
+                </div>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="#contact">Contact</a>
             </li>
@@ -72,49 +95,71 @@
     </div>
 </nav>
 
-<div class="hero">
-    <h1>Welcome to kk College</h1>
-    <p>Where humor meets education!</p>
+<div class="hero text-center d-flex flex-column justify-content-center">
+    <h1 class="display-4">Welcome to kk College</h1>
+    <p class="lead">Where humor meets education!</p>
 </div>
 
 <div class="container mt-5">
     <h2 id="courses">Our Courses</h2>
     <div class="row">
-        <div class="col-md-4 course-card">
+        <div class="col-12 col-md-4 course-card">
             <div class="card">
-                <img src="https://source.unsplash.com/300x200/?comic" class="card-img-top" alt="Course Image">
+                <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2024/03/10-deadpool-chaos-moments.jpg" class="card-img-top" alt="Course on Deadpool's Heroic History">
                 <div class="card-body">
                     <h5 class="card-title">Deadpool's Heroic History</h5>
                     <p class="card-text">Learn about the anti-hero’s journey, tactics, and cultural impact.</p>
-                    <a href="#" class="btn btn-primary">Enroll Now</a>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#enrollModal">Enroll Now</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 course-card">
+        <div class="col-12 col-md-4 course-card">
             <div class="card">
-                <img src="https://source.unsplash.com/300x200/?action" class="card-img-top" alt="Course Image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_3fvfwCM4ru2HxAimiVdp-BRKwyQaWG5xSg&s" class="card-img-top" alt="Course on Combat Skills">
                 <div class="card-body">
                     <h5 class="card-title">Combat Skills 101</h5>
                     <p class="card-text">Train like a mercenary with hands-on combat techniques.</p>
-                    <a href="#" class="btn btn-primary">Enroll Now</a>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#enrollModal">Enroll Now</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 course-card">
+        <div class="col-12 col-md-4 course-card">
             <div class="card">
-                <img src="https://source.unsplash.com/300x200/?humor" class="card-img-top" alt="Course Image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8oPS1y7i-fIrRlQ_lskTydzb8mERxTC_5Xg&s" class="card-img-top" alt="Course on The Art of Comedy">
                 <div class="card-body">
                     <h5 class="card-title">The Art of Comedy</h5>
                     <p class="card-text">Master the comedic timing and storytelling techniques of Deadpool.</p>
-                    <a href="#" class="btn btn-primary">Enroll Now</a>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#enrollModal">Enroll Now</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- Highlights Card Section -->
+<div class="container mt-5">
+    <h2>2024-35 Highlights</h2>
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Exciting Opportunities Await!</h5>
+            <ul>
+                <li>New courses introduced: Advanced Mercenary Tactics, Superhero Ethics.</li>
+                <li>Guest lectures from industry professionals and real-life heroes.</li>
+                <li>Annual Deadpool Festival with fun activities and competitions.</li>
+                <li>Scholarships available for exceptional students.</li>
+                <li>Internships with leading companies in the superhero industry.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 <div class="testimonial container mt-5">
     <h2 id="testimonials">What Our Students Say</h2>
+    <ol class="carousel-indicators">
+        <li data-target="#testimonialCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#testimonialCarousel" data-slide-to="1"></li>
+        <li data-target="#testimonialCarousel" data-slide-to="2"></li>
+    </ol>
     <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -165,17 +210,43 @@
     </form>
 </div>
 
+<!-- Enrollment Modal -->
+<div class="modal fade" id="enrollModal" tabindex="-1" role="dialog" aria-labelledby="enrollModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="enrollModalLabel">Enroll in Course</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to enroll in this course?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Confirm Enrollment</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <footer class="footer text-center py-4">
     <p>&copy; 2024 Deadpool College. All rights reserved.</p>
     <div>
-        <a href="#" class="text-white mr-3"><i class="fab fa-facebook"></i></a>
-        <a href="#" class="text-white mr-3"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-white mr-3" data-toggle="tooltip" title="Follow us on Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-white mr-3" data-toggle="tooltip" title="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white" data-toggle="tooltip" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
     </div>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
 </body>
 </html>
